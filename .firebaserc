@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bioshuar-b4767": {
+      "hosting": {
+        "SISTEMA_DE_ALMACENAMIENTO": [
+          "bioshuar-b4767"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bioshuar-b4767"
+  }
+}

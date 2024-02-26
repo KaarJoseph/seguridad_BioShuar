@@ -1,0 +1,179 @@
+/* src/styles.css o src/styles.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  background-image: url("../../assets/IMG.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.form-register {
+  width: 425px;
+  background: #24303c;
+  padding: 30px;
+  margin: auto;
+  margin-top: 52px;
+  border-radius: 4px;
+  font-family: 'calibri';
+  color: white;
+  box-shadow: 7px 13px 37px #000;
+}
+
+.form-register h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.controls {
+  width: 100%;
+  background: #24303c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #44df4cce;
+  font-family: 'calibri';
+  font-size: 18px;
+  color: white;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.controls:hover {
+  border-color: #44df4c;
+  background-color: #357a38;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.controls:focus {
+  border-color: #357a38;
+  background-color: #357a38;
+  color: #fff;
+}
+
+.form-register p {
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.form-register a {
+  color: white;
+  text-decoration: underline;
+}
+
+.form-register a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.form-register .botons {
+  width: 100%;
+  background: #44df4cce;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.form-register .botons:hover {
+  background-color: #357a38;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.error-message {
+  color: red;
+  font-size: 85%;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente las imágenes */
+  align-items: center; /* Centra verticalmente las imágenes */
+  margin-top: 20px; /* Agrega un margen superior para separar del formulario */
+}
+
+.social-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: #333;
+  color: #fff;
+  transform: scale(1.3); /* Aumenta el tamaño al hacer hover */
+}
+
+.social-link img {
+  width: 100%; /* Asegura que la imagen llene completamente el contenedor */
+  height: 100%;
+  border-radius: 50%; /* Hace que la imagen sea circular */
+}
+
+    /* Estilo para el mensaje de bienvenida */
+.mensaje-bienvenida {
+  background-color: #43a047;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  top: -50px; /* Posición inicial por encima del viewport */
+  left: 0;
+  width: 100%;
+  transition: top 0.5s ease-in-out;
+}
+
+.mensaje-bienvenida.mostrar {
+  top: 0; /* Posición visible en el viewport */
+}
+
+
+/* Estilos ajustados para el elemento select en dispositivos móviles */
+@media screen and (max-width: 980px) {
+  .form-register {
+    width: 350px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 45px;
+    border-radius: 4px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+  }
+
+  .controls select {
+    width: 100%; /* Ajusta el ancho del select al 100% */
+    max-width: 100%; /* Establece el ancho máximo al 100% */
+    padding: 8px; /* Reduce el espacio interior */
+    font-size: 16px; /* Reduce el tamaño de fuente */
+    margin-bottom: 8px; /* Reduce el margen inferior */
+  }
+}

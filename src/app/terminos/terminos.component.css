@@ -1,0 +1,104 @@
+/* src/styles.css o src/styles.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+}
+
+body {
+  background-image: url("../../assets/IMG.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+a {
+  color: blue;
+  cursor: pointer;
+}
+
+/* src/app/terminos/terminos.component.css */
+.texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Cambia a flex-start para que el contenido esté más abajo */
+  height: 100vh;
+  padding: 5% 20%; /* Agrega márgenes a los lados y espacio arriba */
+  box-sizing: border-box; /* Asegura que los márgenes estén incluidos en el ancho total */
+  font-size: 20px;
+  overflow-y: scroll;
+}
+
+.texto-content {
+  width: 100%; /* El ancho del contenido al 100% */
+  max-width: 75%; /* Ancho máximo del contenido al 75% de la pantalla */
+}
+
+.texto a {
+  color: blue;
+  cursor: pointer;
+}
+
+p{
+  text-align: justify;
+}
+
+h1{
+  text-align: center;
+  font-size: 35px;
+}
+ h2{
+  text-align: left;
+ }
+
+ .texto .contacto{
+  text-align: left;
+ }
+ 
+@media screen and (max-width: 980px) {
+
+  /* src/app/terminos/terminos.component.css */
+.texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Cambia a flex-start para que el contenido esté más abajo */
+  align-items: center;
+  height: 100vh;
+  padding: 5% 7%; /* Agrega márgenes a los lados y espacio arriba */
+  box-sizing: border-box; /* Asegura que los márgenes estén incluidos en el ancho total */
+  font-size: 20px;
+  overflow-y: scroll;
+}
+
+.texto-content {
+  width: 100%; /* El ancho del contenido al 100% */
+  max-width: 75%; /* Ancho máximo del contenido al 75% de la pantalla */
+}
+
+.texto a {
+  color: rgb(221, 190, 11);
+  cursor: pointer;
+  text-align: center;
+  font-size: 110%;
+}
+
+p{
+  text-align: justify;
+}
+
+h1{
+  text-align: center;
+  font-size: 35px;
+}
+
+}

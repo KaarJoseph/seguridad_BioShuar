@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registro de acceso</title>
+</head>
+<body>
+  <div class="mensaje-bienvenida" [ngClass]="{'mostrar': mostrarMensajeBienvenida}">
+    ¡Bienvenido a BIOSHUAR!
+  </div>
+  
+  <section class="form-register">
+    <form>
+      <h4>Registro de acceso</h4>
+      <label for="nombres">Nombre:</label>
+      <div *ngIf="nombreInvalid" class="error-message">El nombre es obligatorio.</div>
+      <input class="controls" type="text" id="nombres" [(ngModel)]="cliente.nombre" name="nombres" required>
+
+      <label for="apellidos">Apellido:</label>
+      <div *ngIf="apellidoInvalid" class="error-message">El apellido es obligatorio.</div>
+      <input class="controls" type="text" id="apellidos" [(ngModel)]="cliente.apellido" name="apellidos" required>
+
+      <label for="tipoDocumento">Tipo de Documento:</label>
+      <div *ngIf="tipoDocumentoInvalid" class="error-message">Debe seleccionar un tipo de documento.</div>
+      <select class="controls" id="tipoDocumento" [(ngModel)]="cliente.tipoDocumento" name="tipoDocumento" required>
+        <option value="" disabled selected>Seleccione un tipo de documento</option>
+        <option value="cedula">Cédula</option>
+        <option value="pasaporte">Pasaporte</option>
+      </select>
+
+      <div *ngIf="cliente.tipoDocumento === 'cedula'">
+        <label for="cedula">Cédula:</label>
+        <div *ngIf="cedulaInvalid" class="error-message">La cédula es obligatoria y debe tener 10 caracteres válidos.</div>
+        <input class="controls" type="text" id="cedula" [(ngModel)]="cliente.cedula" name="cedulas" required>
+      </div>
+
+      <div *ngIf="cliente.tipoDocumento === 'pasaporte'">
+        <label for="pasaporte">Pasaporte:</label>
+        <div *ngIf="pasaporteInvalid" class="error-message">El pasaporte es obligatorio y debe cumplir con el formato válido.</div>
+        <input class="controls" type="text" id="pasaporte" [(ngModel)]="cliente.pasaporte" name="pasaporte" required>
+      </div>
+
+      <label for="email">Email:</label>
+      <div *ngIf="emailInvalid" class="error-message">El email es obligatorio.</div>
+      <input class="controls" type="email" id="email" [(ngModel)]="cliente.email" name="email" required>
+
+      <label>
+        <input type="checkbox" [(ngModel)]="acuerdoTerminos" name="acuerdoTerminos">
+        Estoy de acuerdo con los <a routerLink="/terminos">Términos y Condiciones</a>
+      </label>
+      <div *ngIf="envioIntentado && !acuerdoTerminos" class="error-message">Debes aceptar los Términos y Condiciones.</div>
+      
+      <button (click)="enviar()" class="botons" type="button">Registrar</button>
+    </form>
+  </section>
+
+  <br>
+  <br>
+  <br>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=100088873056213&mibextid=ZbWKwL" class="social-link" target="_blank">
+      <img src="../../assets/FB.jpg" alt="facebook">
+    </a>
+    <a href="https://instagram.com/bio_shuar?igshid=MzRlODBiNWFlZA==" class="social-link" target="_blank">
+      <img src="../../assets/IG.jpg" alt="instagram">
+    </a>
+  </div>
+  
+  <br>
+  <br>
+</body>
+</html>
